@@ -1,4 +1,7 @@
 :root {
+  --color-primary: #1d2c4d;
+  --color-secondary: #0077c0;
+  --color-muted: #6c757d;
   --color-dark: #002e4d;
   --color-light: #f8f9fa;
   --color-text: #333;
@@ -104,4 +107,30 @@ body {
 }
 .left-column{
   width: 400p;
+}
+
+.descargar-bottom {
+  margin-top: 40px;
+  display: block;
+  width: fit-content;
+  margin-left: auto; /* Empuja a la derecha */
+  margin-right: 20px; /* Separación del borde derecho */
+}
+
+.descargar-bottom a button {
+  background-color: var(--color-light);
+  color: var(--color-primary);
+  border: 2px solid var(--color-secondary);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.descargar-bottom a button:hover {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  box-shadow: 0 0 10px var(--color-dark);
 }

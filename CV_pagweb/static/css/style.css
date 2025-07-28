@@ -34,6 +34,32 @@ header img {
   border-radius: 100px;
 }
 
+.btn-descargar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.btn-descargar button {
+  background-color: var(--color-light);
+  color: var(--color-primary);
+  border: 2px solid var(--color-secondary);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: bold;
+  font-family: var(--font-main);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-descargar button:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-light);
+  box-shadow: 0 0 10px rgba(0, 119, 192, 0.3);
+}
+
 .header-bg {
   height: 300px;
   color: white;
@@ -42,7 +68,7 @@ header img {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url('https://picsum.photos/1200/300/?blur=5');
+  background-image: url('https://picsum.photos/1200/300/?blur=10');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -70,6 +96,13 @@ nav a {
   color: var(--color-light);
   text-decoration: none;
   font-weight: bold;
+  padding: 4px;
+}
+nav > ul > li > a:hover{
+  background-color: var(--color-primary);
+  border-radius: 5px;
+  animation-delay: 0.5s;
+  transition: all 1s ease;
 }
 
 main {
@@ -88,8 +121,9 @@ section {
 
 h1, h2 {
   font-family: var(--font-heading);
-  color: var(--color-secondary);
+  color: var(--color-primary);
   margin-bottom: 10px;
+  font-weight: 900;
 }
 
 ul {
