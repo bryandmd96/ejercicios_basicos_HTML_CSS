@@ -1,0 +1,56 @@
+:root {
+  --color-primary: #002e4d;
+  --color-accent: #007bff;
+  --color-bg: #ffffff;
+  --font-title: 'Oswald', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+}
+
+.card-profile {
+  background-color: var(--color-bg);
+  text-align: center;
+  padding: 30px;
+  max-width: 250px;
+  margin: 50px auto;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  font-family: var(--font-body);
+}
+
+.card-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-primary);
+  margin-bottom: 15px;
+}
+
+.card-title {
+  font-size: 1.5em;
+  font-family: var(--font-title);
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.card-desc {
+  font-size: 0.95em;
+  color: #555;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.card-button {
+  background-color: var(--color-accent);
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+  background-color: var(--color-primary);
+}
