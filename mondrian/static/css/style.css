@@ -1,0 +1,59 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.padre{
+    width: 500px;
+    height: 500px;
+    background-color: green;
+    margin: auto;
+    box-shadow: 10px 20px lightgray;
+}
+
+.padre *{
+    border: 5px solid black;
+}
+
+.blanco{
+    width: 25%;
+    height: 35%;
+    background-color: aliceblue;
+    float: left;
+}
+
+.rojo{
+    width: 75%;
+    height: 70%;
+    background-color:  red;
+    float: right;
+}
+
+.azul{
+    width: 25%;
+    height: 30%;
+    background-color: blue;
+    float: left;
+}
+
+.blancogd{
+    width: 65%;
+    height: 30%;
+    background-color: aliceblue;
+    float: left;
+}
+
+.blancopq{
+    background-color: aliceblue;
+    width: 10%;
+    height: 15%;
+    float: left;
+}
+
+.amarillo{
+    background-color: yellow;
+    float: right;
+    width: 10%;
+    height: 15%;
+}
