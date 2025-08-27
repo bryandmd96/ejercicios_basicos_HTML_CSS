@@ -161,16 +161,99 @@ console.log(evaluarPermisos(20, 150, "usuario")); // Acceso limitado
 console.log(evaluarPermisos(16, 50, "invitado")); // Acceso denegado
 
 // 10
-function crearContadorDesde(x) {
+function crearContadorDesde(z) {
   return function () {
-    return x++;
+    return z++;
   };
 }
 
-const contador = crearContadorDesde(5);
+const contadorsito = crearContadorDesde(5);
 
-console.log("-------CONTADOR DE USO DE FUNCIÓN-------");
-console.log(contador()); // 5
-console.log(contador()); // 6
-console.log(contador()); // 7
+console.log("-------CONTADOR DE USO DE FUNCIÓN (CLOUSER)-------");
+console.log(contadorsito()); // 5
+console.log(contadorsito()); // 6
+console.log(contadorsito()); // 7
+
+// 1 avanzado
+function verificarAcceso(usuario) {
+  if (usuario.rol === "admin") {
+    if (usuario.activo && usuario.claveCorrecta) {
+      return "Acceso total";
+    }
+  } else if (usuario.rol === "editor") {
+    if (usuario.activo && usuario.claveCorrecta) {
+      return "Acceso parcial";
+    }
+  } else if (usuario.rol === "usuario") {
+    if (usuario.activo && usuario.claveCorrecta) {
+      return "Acceso limitado";
+    }
+  }
+  return "Acceso denegado";
+}
+
+let usuarioAcceso = {
+rol: "usuario",
+activo: true,
+claveCorrecta: true
+}
+console.log("----VERIFICADOR DE ACCESO DE USUARIO CON OBJETO----");
+console.log(verificarAcceso(usuarioAcceso));
+
+// 2 avanzado
+function filtrarMayoresActivos(usuarios) {
+  return usuarios
+    .filter(usuario => usuario.edad >= 18 && usuario.activo)
+    .map(usuario => usuario.nombre);
+}
+const lista = [
+  { nombre: "Ana", edad: 22, activo: true },
+  { nombre: "Luis", edad: 16, activo: true },
+  { nombre: "Carlos", edad: 30, activo: false }
+];
+console.log("-------VERIFICADOR DE MAYORES DE EDAD-------");
+console.log(filtrarMayoresActivos(lista));
+
+// 3 avanzado
+function crearListaHTML(items) {
+  return `<ul>${items.map(item => `<li>${item}</li>`).join('')}</ul>`;
+}
+const listaHTML = crearListaHTML(["Pan", "Queso", "Café", "Bocadillo"]);
+
+console.log("-------GENERADOR DE LISTA DINAMICAS HTML-------");
+console.log(listaHTML);
+
+// 4 avanzado
+function crearContadorDesdeSaltos(valorInicial, paso) {
+  let valorActual = valorInicial;
+  
+  return function() {
+    valorActual += paso;
+    return valorActual;
+  };
+}
+const contadorConSaltos = crearContadorDesdeSaltos(10, 3);
+
+console.log("------CLOUSER CON 2 PARAMETROS (INICIO/SALTOS)------");
+console.log(`clouser en primera ejecucion: ${contadorConSaltos()}`); // 13
+console.log(`clouser en segunda ejecucion: ${contadorConSaltos()}`); // 16
+console.log(`clouser en tercera ejecucion: ${contadorConSaltos()}`); // 19
+
+// 5 avanzado
+function filtrarPersonalizado(array, criterioFn) {
+  const resultado = [];
+
+  for (let elemento of array) {
+    if (criterioFn(elemento)) {
+      resultado.push(elemento);
+    }
+  }
+
+  return resultado;
+}
+const numerosArray = [1, 2, 3, 4, 5, 6, 7, 8];
+const soloPares = filtrarPersonalizado(numerosArray, n => n % 2 === 0);
+
+console.log("-----FILTRANDO PARES DE UN ARRAY CON CALLBACKS-----");
+console.log(soloPares); // [2, 4, 6, 8]
 

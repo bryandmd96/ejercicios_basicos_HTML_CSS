@@ -1,0 +1,20 @@
+[
+  {
+    "nombre": "Camiseta",
+    "precio": 20,
+    "descripcion": "Camiseta de algodón 100%",
+    "imagen": "img/camiseta.jpg"
+  },
+  {
+    "nombre": "Pantalón",
+    "precio": 35,
+    "descripcion": "Pantalón vaquero clásico",
+    "imagen": "img/pantalon.jpg"
+  },
+  {
+    "nombre": "Zapatillas",
+    "precio": 50,
+    "descripcion": "Zapatillas deportivas cómodas",
+    "imagen": "img/zapatillas.jpg"
+  }
+]

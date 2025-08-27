@@ -1,0 +1,64 @@
+/* Validación visual */
+.invalid {
+  border-color: red;
+}
+.valid {
+  border-color: green;
+}
+
+/* Animación al agregar/eliminar */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Toast visual */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #198754;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Carrusel: imagen completa */
+.carousel-item {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  max-width: 600px;
+  margin: auto;
+  background-color: #f8f9fa;
+  border: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.card-img-top {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Flechas en gris medio oscuro */
+.custom-arrow .carousel-control-prev-icon,
+.custom-arrow .carousel-control-next-icon {
+  background-color: #555; /* gris medio oscuro */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-size: 60% 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
