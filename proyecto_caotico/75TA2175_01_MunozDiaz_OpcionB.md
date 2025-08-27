@@ -1,5 +1,5 @@
 # Auditoría Individual – BRYAN DAVID MUÑOZ DIAZ – Opción B
-## snippet de SQL
+## Snippet de SQL
 ```sql
 CREATE TABLE pedido(
 id INT,
