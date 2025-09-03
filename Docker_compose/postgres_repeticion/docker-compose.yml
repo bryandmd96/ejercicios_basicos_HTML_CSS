@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  # BBDD
+  db:
+    image: postgres:15
+    container_name: postgres_libreria
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "postgres123"
+      POSTGRES_DB: curso_ifcd0112
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init:/docker-environment-initdb.d
+      - ./data:/data
+    restart: always
+    networks:
+      - dbnet
+    ports:
+      - "5432:5432"
+
+  # Gestor Visual
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin_libreria
+    environment:
+      PGADMIN_DEFAULT_EMAIL: libreria@libreria.com
+      PGADMIN_DEFAULT_PASSWORD: "Libreria_123"
+    ports:
+      - "8082:80"
+    depends_on:
+      - db
+    restart: always
+    networks:
+      - dbnet
+volumes:
+    pgdata:
+networks:
+    dbnet:
+      driver: bridge
